@@ -4,8 +4,10 @@ import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import ru.orbitel.jooq.generated.public_.tables.Contracts;
+import ru.orbitel.jooq.generated.public_.tables.records.ContractsRecord;
 
-import static ru.orbitel.jooq.generated.public_.tables.Contracts.CONTRACTS;
+
 
 @Repository(value = "contractRepository")
 public class ContractRepository {
@@ -15,9 +17,9 @@ public class ContractRepository {
         this.dslContext = dslContext;
     }
 
-    public List<ru.orbitel.jooq.generated.public_.tables.records.ContractsRecord> findAll() {
-        return dslContext.selectFrom(ru.orbitel.jooq.generated.public_.Tables.CONTRACTS)
-                .orderBy(CONTRACTS.CONTRACT_ID.asc())
+    public List<ContractsRecord> findAll() {
+        return dslContext.selectFrom(Contracts.CONTRACTS)
+                .orderBy(Contracts.CONTRACTS.CONTRACT_ID.asc())
                 .fetch();
     }
 
