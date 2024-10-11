@@ -1,0 +1,13 @@
+spring:
+  application:
+  name: api
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/orbitel
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+server:
+  port: 8088
+  spring: datasource.url=jdbc:postgresql://localhost:5432/orbitel
+
