@@ -11,6 +11,7 @@ import ru.orbitel.jooq.generated.public_.tables.records.ContractsRecord;
 
 @Repository(value = "contractRepository")
 public class ContractRepository {
+
     private final DSLContext dslContext;
 
     public ContractRepository(DSLContext dslContext) {
